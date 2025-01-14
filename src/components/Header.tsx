@@ -1,12 +1,17 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import clsx from "clsx";
 
 const Header = () => {
+  const pathname = usePathname();
+
   const menus = [
     { name: "プロジェクト", href: "/" },
     { name: "メンバ", href: "/member" },
   ];
+
   return (
     <header className="bg-primary">
       <nav
@@ -24,7 +29,14 @@ const Header = () => {
             <Link
               key={menu.href}
               href={menu.href}
-              className="text-sm/6 font-semibold text-white border-b-2 border-transparent hover:border-white transition duration-200"
+              className={clsx(
+                "text-sm/6 font-semibold border-b-2 transition duration-200",
+                {
+                  "text-white border-white": pathname === menu.href,
+                  "text-white border-transparent hover:border-white":
+                    pathname !== menu.href,
+                }
+              )}
             >
               {menu.name}
             </Link>

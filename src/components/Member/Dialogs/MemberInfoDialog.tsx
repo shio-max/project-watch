@@ -132,7 +132,7 @@ const MemberModal = ({
             </Button>
             <Button
               className="bg-primary"
-              disabled={hasError}
+              disabled={hasError || !name || !email}
               onClick={handleSave}
             >
               {isEdit ? "編集" : "追加"}

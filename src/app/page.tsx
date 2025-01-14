@@ -21,7 +21,7 @@ import {
 import Container from "@/components/Project/Container";
 import Items from "@/components/Project/Item";
 import Button from "@/components/Common/Button";
-import ProjectModal from "@/components/Project/Dialogs/ProjrctDialog";
+import ProjectModal from "@/components/Project/Dialogs/ProjectDialog";
 import MemberModal from "@/components/Project/Dialogs/MemberDialog";
 import { ProjectContainer, Position } from "@/types/project";
 import { fetchAllMembers } from "@/utils/firebase/member";
@@ -37,7 +37,7 @@ const Project = () => {
   const [currentContainerId, setCurrentContainerId] =
     useState<UniqueIdentifier>();
   const [currentItemId, setCurrentItemId] = useState<UniqueIdentifier>();
-  const [projecName, setProjecName] = useState("");
+  const [projectName, setProjecName] = useState("");
   const [hasProjectModalError, setHasProjectModalError] = useState(true);
   const [projectDescription, setProjectDescription] = useState("");
   const [tags, setTags] = useState<string[]>([]);
@@ -63,7 +63,7 @@ const Project = () => {
     const newProject = {
       id: `container-${generateTimestampId()}`,
       displayOrder: containers.length,
-      name: projecName,
+      name: projectName,
       description: projectDescription,
       tags,
       items: [],
@@ -80,7 +80,7 @@ const Project = () => {
       container.id === currentContainerId
         ? {
             ...container,
-            name: projecName,
+            name: projectName,
             description: projectDescription,
             tags,
           }
@@ -529,7 +529,7 @@ const Project = () => {
         {/* コンテナ追加モーダル */}
         <ProjectModal
           showModal={showContainerModal}
-          projecName={projecName}
+          projectName={projectName}
           projectDescription={projectDescription}
           tags={tags}
           hasError={hasProjectModalError}
