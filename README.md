@@ -6,6 +6,8 @@ P-Watch は、社員のプロジェクト所属状況を簡単に把握・管理
 
 [デモサイト](https://project-watch-37eee.firebaseapp.com)
 
+![p-watch](https://github.com/user-attachments/assets/e8efc151-4cf8-4a42-9897-76b167eceb74)
+
 ## 使用技術
 
 | カテゴリ       | 技術スタック          |
