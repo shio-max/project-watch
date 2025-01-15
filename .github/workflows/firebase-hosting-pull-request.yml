@@ -14,7 +14,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Build to Static file Export
-        run: npm ci && npm run build && npm run export
+        run: npm ci && npm run build
       - name: Firebase Hosting Deploy
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
