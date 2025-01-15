@@ -3,6 +3,8 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
+import { PiEyesFill } from "react-icons/pi";
+import { IconContext } from "react-icons";
 
 const Header = () => {
   const pathname = usePathname();
@@ -19,8 +21,11 @@ const Header = () => {
         className="mx-auto flex max-w-7xl items-center justify-between px-8"
       >
         <div className="py-4">
-          <Link href="/" className="-m-1.5 p-1.5">
-            <span className="text-white text-lg">プロジェクト管理ツール</span>
+          <Link href="/" className="-m-1.5 p-1.5 flex gap-2">
+            <IconContext.Provider value={{ color: "#fecdd3", size: "30px" }}>
+              <PiEyesFill />
+            </IconContext.Provider>
+            <p className="text-white text-2xl">P-Watch</p>
           </Link>
         </div>
 

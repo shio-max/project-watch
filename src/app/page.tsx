@@ -583,7 +583,7 @@ const Project = () => {
           </div>
         )}
 
-        <div className="mt-10">
+        <div className="mt-8">
           <div className="grid grid-cols-4 gap-6">
             <DndContext
               sensors={sensors}
