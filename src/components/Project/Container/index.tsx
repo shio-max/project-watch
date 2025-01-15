@@ -53,6 +53,7 @@ const Container = ({
         transform: CSS.Translate.toString(transform),
         maxHeight: "640px",
         overflowY: "auto",
+        overflowX: "hidden",
       }}
       className={clsx(
         "w-full h-full p-4 bg-gray-100 rounded-xl flex flex-col gap-y-4",

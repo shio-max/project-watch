@@ -1,36 +1,40 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# P-Watch
 
-## Getting Started
+## 概要
 
-First, run the development server:
+P-Watch は、社員のプロジェクト所属状況を簡単に把握・管理するための社内ツールです。
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+[デモサイト](https://project-watch-37eee.firebaseapp.com)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 使用技術
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| カテゴリ       | 技術スタック          |
+| -------------- | --------------------- |
+| フロントエンド | Next.js, Tailwind CSS |
+| データベース   | FireStore (No SQL)    |
+| ホスティング   | Firebase Hosting      |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 対応デバイス
 
-## Learn More
+ノートパソコンまたはデスクトップのみ
 
-To learn more about Next.js, take a look at the following resources:
+## ツールを開発した背景
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+本ツールの開発は、以下の課題を解決することを目的として開発しました。
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- チーム外のメンバーからアドバイスをもらう際に、同じ技術スタックを使用している他プロジェクトの情報を素早く確認したい
+- 上層部が、社員のプロジェクトアサイン状況や現在の担当業務を簡単に把握できる仕組みを作りたい
+- ドラッグ＆ドロップによる操作性の高い UI を実現し、効率的かつ直感的なプロジェクト管理体験を提供したい
 
-## Deploy on Vercel
+## 機能
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+_プロジェクト管理画面_
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. プロジェクトの追加・編集、削除
+1. プロジェクトごとのメンバー割り当て
+1. プロジェクトやメンバーのドラッグ＆ドロップによる配置変更
+
+_メンバ管理画面_
+
+1. メンバの絞り込み検索
+1. メンバの追加・編集、削除

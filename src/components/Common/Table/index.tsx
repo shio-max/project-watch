@@ -17,7 +17,7 @@ const Table = ({
   onDeleteChange,
 }: TableProps) => {
   return (
-    <div className="relative max-h-[400px] overflow-y-auto border border-gray-200 rounded-lg">
+    <div className="relative max-h-[550px] overflow-y-auto border border-gray-200 rounded-lg">
       <table className="w-full border-collapse">
         <thead className="bg-gray-200 sticky top-0 z-10">
           <tr>

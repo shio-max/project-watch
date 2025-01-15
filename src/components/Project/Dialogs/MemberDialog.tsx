@@ -67,9 +67,7 @@ const MemberModal = ({
   const filteredMembers =
     query === ""
       ? memberList
-      : memberList.filter((member) =>
-          member.name.toLowerCase().includes(query.toLowerCase())
-        );
+      : memberList.filter((member) => member.name.includes(query));
 
   const handleSave = () => {
     const selectedPositions = checkedItems
@@ -134,7 +132,7 @@ const MemberModal = ({
                   >
                     <FiCheck className="invisible group-data-[selected]:visible" />
                     <span className="data-[selected]:fw-bold">
-                      {member.name}
+                      {`${member.name}（${member.belong_to}）`}
                     </span>
                   </ComboboxOption>
                 ))

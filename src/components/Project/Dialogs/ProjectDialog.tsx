@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 
 type AddProjectModalProps = {
   showModal: boolean;
-  projecName: string;
+  projectName: string;
   projectDescription: string;
   tags: string[];
   hasError: boolean;
@@ -22,7 +22,7 @@ type AddProjectModalProps = {
 
 const ProjectModal = ({
   showModal,
-  projecName,
+  projectName,
   projectDescription,
   tags,
   hasError,
@@ -95,7 +95,7 @@ const ProjectModal = ({
           type="text"
           placeholder="プロジェクト名*"
           name="projectName"
-          value={projecName}
+          value={projectName}
           onChange={(e) => onNameChange(e.target.value)}
           validations={[
             {
@@ -112,7 +112,12 @@ const ProjectModal = ({
           onChange={(e) => onDescriptionChange(e.target.value)}
         />
         <div className="flex flex-col w-full">
-          <p className="py-2">技術スタック</p>
+          <p className="py-2">
+            技術スタック
+            <span className="text-xs">
+              （Enter押下で複数のタグを追加できます。）
+            </span>
+          </p>
           <div className="flex flex-wrap gap-2">
             {tags.map((tag: string) => (
               <div
@@ -147,7 +152,7 @@ const ProjectModal = ({
           </Button>
           <Button
             className="bg-primary"
-            disabled={hasError}
+            disabled={hasError || !projectName}
             onClick={handleSave}
           >
             {isEdit ? "編集" : "追加"}
